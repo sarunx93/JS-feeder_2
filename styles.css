@@ -177,7 +177,9 @@ NavBar
 .fixed-nav .links a:hover {
   color: var(--clr-secondary);
 }
-
+.fixed-nav .underline {
+  display: none;
+}
 .links-container {
   height: 0;
   overflow: hidden;
@@ -255,9 +257,27 @@ NavBar
 Banner
 ========================
 */
+/* animation */
+@keyframes opapa {
+  0% {
+    opacity: 0;
+  }
+  25% {
+    opacity: 0.25;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  75% {
+    opacity: 0.75;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 .banner {
   min-height: 100vh;
-  margin-top: -6rem;
+  margin-top: -5rem;
   background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
     url(./images/feeder.jpg) center/cover;
   display: grid;
@@ -271,6 +291,16 @@ Banner
   height: 0.25rem;
   background: gold;
 }
+.band-name {
+  color: gold;
+  animation: opapa 1s ease-in-out;
+}
+.band-motto {
+  animation: opapa 2s ease-in-out;
+}
+.soul {
+  color: var(--clr-red-light);
+}
 /* 
 ========================
 About
@@ -281,7 +311,12 @@ About
 } */
 @media screen and (min-width: 768px) {
   .about-content {
+    text-align: justify;
+  }
+  .about-us {
     text-align: center;
+    font-size: 1.5rem;
+    text-decoration: underline solid #ce4848;
   }
 }
 .about-text {
@@ -560,6 +595,7 @@ section:not(.footer) {
 }
 
 /* discography */
+
 .discography {
   font-size: 2rem;
 }
@@ -656,4 +692,64 @@ p {
 .footer-icon:hover {
   color: red;
   transition: var(--transition);
+}
+
+/* 
+=========================
+Contact
+=========================
+*/
+
+.contact-section {
+  max-width: 100vw;
+  display: grid;
+  grid-template-columns: 45% 55%;
+}
+.contact-info {
+  text-align: justify;
+}
+.contact-item {
+  margin-bottom: 1.25rem;
+}
+.contact-item h4 {
+  letter-spacing: 0;
+}
+.email {
+  text-transform: none;
+}
+
+/* .contact-form {
+  display: grid;
+  place-items: center;
+} */
+.form-control {
+  display: block;
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: none;
+  margin-bottom: 1.25rem;
+}
+.form-control::placeholder {
+  font-family: var(--ff-primary);
+  color: var(--clr-red-dark);
+  text-transform: uppercase;
+}
+.send-btn {
+  background: transparent;
+  width: 90%;
+  padding: 0.35rem 0.55rem;
+  cursor: pointer;
+  font-family: var(--ff-primary);
+  text-transform: uppercase;
+  font-weight: 800;
+}
+.send-btn:hover {
+  background: black;
+  color: white;
+  transition: var(--transition);
+}
+.contact-head {
+  font-size: 2.5rem;
+  margin-bottom: 3rem;
+  margin-top: 3rem;
 }
