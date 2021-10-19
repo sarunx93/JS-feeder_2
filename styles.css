@@ -197,7 +197,7 @@ NavBar
   margin-bottom: 0.75rem;
 }
 .links a:hover {
-  color: white;
+  color: red;
   padding-left: 0.75rem;
   transition: var(--transition);
 }
@@ -205,6 +205,11 @@ NavBar
   /* nav {
     background: transparent;
   } */
+  .links a:hover {
+    color: white;
+    padding-left: 0.75rem;
+    transition: var(--transition);
+  }
   .underline {
     width: 5rem;
     height: 2rem;
@@ -667,15 +672,21 @@ p {
   border-top-right-radius: var(--radius);
   margin: 0 auto;
 }
-.disc-footer img {
-  width: 2.25rem;
-  height: 2.25rem;
-  object-fit: cover;
-  border-radius: 50%;
-  position: absolute;
-  transform: translate(270%, 0.2%);
-}
 
+.disc-footer img {
+  visibility: hidden;
+}
+@media screen and (min-width: 768px) {
+  .disc-footer img {
+    visibility: visible;
+    width: 2.25rem;
+    height: 2.25rem;
+    object-fit: cover;
+    border-radius: 50%;
+    position: absolute;
+    transform: translate(270%, 0.2%);
+  }
+}
 /* footer */
 .footer {
   margin-top: 5rem;
