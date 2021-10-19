@@ -148,7 +148,7 @@ NavBar
 }
 .nav-toggle {
   font-size: 2rem;
-  color: gold;
+  color: black;
   background: transparent;
   border-color: transparent;
   transition: var(--transition);
@@ -277,7 +277,7 @@ Banner
 }
 .banner {
   min-height: 100vh;
-  margin-top: -5rem;
+  /* margin-top: -5rem; */
   background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
     url(./images/feeder.jpg) center/cover;
   display: grid;
@@ -300,6 +300,11 @@ Banner
 }
 .soul {
   color: var(--clr-red-light);
+}
+@media screen and (min-width: 768px) {
+  .banner {
+    margin-top: -5rem;
+  }
 }
 /* 
 ========================
